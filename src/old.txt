@@ -1,0 +1,39 @@
+/*
+function Camera(props) {
+
+  const ref = useRef()
+  const set = useThree(state => state.set)
+  useScrollPosition(({ prevPos, currPos }) => {
+    ref.current.position.y = 0.001 * currPos.y
+  })
+
+  useEffect(() => void set({ camera: ref.current }), [])
+  useFrame(() => {
+      ref.current.updateMatrixWorld()
+    })
+  return <perspectiveCamera ref={ref} {...props} />
+}
+
+function Box(props) {
+
+    const { mouse } = useThree()
+
+    const ref = useRef()
+    useFrame(( { clock} ) => {
+        //ref.current.position.x = mouse.x * 0.05
+        //ref.current.position.y = -1.2 + (mouse.y * 0.05)
+        ref.current.rotation.y = (Math.PI / 4) + Math.sin(clock.getElapsedTime()) * 0.1
+    })
+
+  const envMap = useCubeTexture(
+    ["nx.png", "px.png", "ny.png", "nx.png", "py.png", "py.png"],
+    { path: '/cubemap/' })
+
+  return (
+    <mesh ref={ref} rotation={[0, Math.PI / 4,0]} position={[0, -1.2, 4]}>
+        <Model/>
+      <meshLambertMaterial color='0x010101' envMap={envMap}/>
+    </mesh>
+  )
+}
+*/
